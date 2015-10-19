@@ -55,4 +55,28 @@ http://www.tipue.com/tipr
           });
      };
      
+     // Force tipr to top on 'top' setting
+     $('.tip').on('mouseover', function(){
+     	var objHeight = $(this).height(),
+     		tipHeight = $('.tipr_container_top').height(),
+			cutHeight = objHeight * 0.5,
+			setHeight = objHeight + tipHeight,
+			setHeightNeg = '-' + setHeight + 'px';
+     	$(this).find('.tipr_container_top').css({
+	     	'margin-top' : setHeightNeg
+	     });
+     });
+     
+     // Force tipr to bottom on 'bottom' setting
+     $('.tip').on('mouseover', function(){
+     	var objHeight = $(this).height(),
+     		tipHeight = $('.tipr_container_bottom').height(),
+			cutHeight = objHeight * 0.5,
+			setHeight = objHeight + tipHeight,
+			setHeightNeg = '-' + setHeight + 'px';
+     	$(this).find('.tipr_container_bottom').css({
+	     	'margin-bottom' : setHeightNeg
+	     });
+     });
+     
 })(jQuery);
